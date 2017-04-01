@@ -3,7 +3,7 @@
 **Instructions: ** Define each of the following Git concepts.
 
 * What is version control?  Why is it useful? 
-Version control is a system that allows us to keep track of our work, coding and edits to any files within a directory (folder) that turns into a "repository" so that we can see our file in specific points in time. It is very useful since it can help us avoid loosing files, we can track the file to its original state or at any point that we saved, we can allow "branches" to be made so that we can try out changes and if we accept them we can then merge them to our original files, and it allows a team to work together on the same file, make changes, and integrate them to the original file if we wish to do so.
+Version control is a system (tool) that allows us to keep track of our work and changes to any files within a directory (folder) that turns into a "repository" so that we can see our file in specific points in time. It is very useful since it can help us avoid loosing files, we can track the file to its original state or at any point that we saved, we can allow "branches" to be made so that we can try out changes and if we accept them we can then merge them to our original files, and it allows a team to work together on the same file, make changes, and integrate them to the original file if we wish to do so.
 
 * What is a branch and why would you use one?
 A branch is a copy of the original file that we can create in order to keep the original copy intact and do any changes and edits that we want without risking loosing the original file. This allows us to create a new "path" to experiment with.
