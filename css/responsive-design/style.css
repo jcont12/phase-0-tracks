@@ -9,9 +9,15 @@ cite {
   margin-top: 10px;
 }
 
-#external-links ul {
+#external-links {
   list-style-type: none;
   padding-left: 0px;
+  max-width:100%;
+  display:inline-block;
+  vertical-align: top;
+  position:absolute;
+  left:950px;
+
 }
 
 /* you're welcome to edit the
@@ -29,4 +35,32 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+body {
+
+max-width:20%;
+}
+
+main {
+  max-width:70%;
+  display:inline-block;
+  vertical-align: top;
+  position: absolute;
+  top:0px;
+
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+
+  h1 {
+
+    font-size:90%;
+  }
+  figcaption {
+    display:none;
+  }
 }
