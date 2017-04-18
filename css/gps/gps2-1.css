@@ -1,0 +1,41 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  
+}
+
+header {
+  background-color:red;
+  padding:15px;
+  margin-bottom: 10px;
+}
+
+
+.column-1 {
+  background-color:purple;
+  color:#fff;
+  display: inline-block;
+  width:48%;
+  vertical-align:top;
+  background-image:url("https://media4.s-nbcnews.com/j/newscms/2016_36/1685951/ss-160826-twip-05_8cf6d4cb83758449fd400c7c3d71aa1f.nbcnews-ux-2880-1000.jpg");
+  background-position:50% 10%;
+}
+
+a {
+  color:#c8daee;
+  text-decoration:none;
+  font-style: italic;
+}
+
+.column-2 {
+  background-color:green;
+   display: inline-block;
+   width:48%;
+   
+}
+
+footer {
+  background-color:orange;
+  font-size:12px;
+  padding:20px;
+  margin-top: 15px;
+}
