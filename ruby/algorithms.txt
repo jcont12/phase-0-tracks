@@ -1,0 +1,26 @@
+How to ride an elevator:
+
+# Approach the elevator
+# If door is closed, press the button to call elevator. When elevator door opens enter the elevator.
+# Else (if door is open) enter the elevator.
+# Look at the buttons on the elevator and search for number "X".
+# Press Number "X"
+# Wait until the elevator arrives to number "X" and the doors open.
+# Exit Elevator
+
+How to walk your dog:
+
+# Find the leash and grab it.
+# Find platic bags and grab them.
+# Go to your dog and put the leash on its collar.
+# Open the door and exit your home.
+# Close the door
+# Define a preferred route to take that takes the dog out for at least 20 minutes.
+# Start walking in the desired route.
+# If dog poops, use a plastic bag to pick up poop.
+# Else continue on your route.
+# When we arrive home, open door.
+# Enter home and close door.
+# Take leash off dog.
+# If poop was picked up, put it in garbage.
+# Else store plastic bags and leash.
