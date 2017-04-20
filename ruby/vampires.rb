@@ -70,27 +70,45 @@ If the employee got their age wrong, and hates garlic bread or waives insurance,
 =end
 condition1 = age_question && (garlic_question || insurance_question)
 
-condition2 = !(age_question && garlic_question && insurance_question)
-
 
 if	condition1 == true
-	puts "Probably not a vampire"
+	vampire = 1
 else 
-	puts "Probably a vampire"
+	vampire = 2
 end
 
-##if age_question (false), garlic_question (False) and insurance_question (false), print "Almost certainly a vampire"
+#if age_question (false), garlic_question (False) and insurance_question (false), print "Almost certainly a vampire"
 if (age_question == false) && (garlic_question == false) && (insurance_question == false)
-	puts "Almots certainly a vampire"
+	vampire = 3
+# NOTE : Condition 1 doesn't take into account what happens if age_question is wrong, but wants garlic and insurance which should be inconclusive"
+elsif (age_question == false) && (garlic_question == true) && (insurance_question== true)
+	vampire = 5
 end
 
 #anyone going by the name of “Drake Cula” or “Tu Fang” print “Definitely a vampire.”
 if name == "Drake Cula"
-	puts "Definitely a vampire"
+	vampire = 4
 elsif name == "Tu Fang"
-	puts "Definitely a vampire"
+	vampire = 4
 else
 end
 
+=begin
+Because there are many different variables for many different answers, it can't be limited to a single variable (true or false).
+Therefore we create cases to account for different answers and depending on what the answers are we put a different response.
+=end
 
-
+case vampire
+when 1
+	puts "Probably not a vampire"
+when 2
+	puts "Probably a vampire"
+when 3
+	puts "Almost certainly a vampire"
+when 4
+	puts "Definitely a vampire"
+when 5
+	puts "Results inconclusive"
+else
+	puts "Results inconclusive"
+end
