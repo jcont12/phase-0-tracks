@@ -10,10 +10,10 @@ GET THEIR AGE RIGHT
 
 #1 .- Ask for their age and year they were born.
 puts "How old are you?"
-age = gets.chomp
+age = gets.chomp.to_i
 
 puts "What year where you born?"
-year =  gets.chomp
+year =  gets.chomp.to_i
 
 # 2.- Take the age variable and substract it to 2017
 year_born = 2017 - age 
@@ -72,20 +72,25 @@ condition1 = age_question && (garlic_question || insurance_question)
 
 condition2 = !(age_question && garlic_question && insurance_question)
 
-if condition1 == true
+
+if	condition1 == true
 	puts "Probably not a vampire"
-elsif condition1 == false
-	puts "Probably a vampire"
-##if age_question (false), garlic_question (False) and insurance_question (false), print "Almost certainly a vampire"
-elsif (age_question == false) && (garlic_question == false) && (insurance_question == false)
-	puts "Almots certainly a vampire"
-#anyone going by the name of “Drake Cula” or “Tu Fang” print “Definitely a vampire.”
-elsif name == "Drake Cula"
-	puts "Definitely a Vampire"
-elsif name == "Tu Fang"
-	puts "Definitely a Vampire"
 else 
-	puts "Results inconclusive"
+	puts "Probably a vampire"
 end
+
+##if age_question (false), garlic_question (False) and insurance_question (false), print "Almost certainly a vampire"
+if (age_question == false) && (garlic_question == false) && (insurance_question == false)
+	puts "Almots certainly a vampire"
+end
+
+#anyone going by the name of “Drake Cula” or “Tu Fang” print “Definitely a vampire.”
+if name == "Drake Cula"
+	puts "Definitely a vampire"
+elsif name == "Tu Fang"
+	puts "Definitely a vampire"
+else
+end
+
 
 
