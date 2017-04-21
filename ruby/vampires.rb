@@ -29,7 +29,7 @@ year_born = 2017 - age
 
 # 3.- Compare answer (year_born) with 2017, if same true otherwise false
 
-if year_born == year
+if year_born >= year && year_born <= year +1
 	age_question = true
 else
 	age_question = false
@@ -115,7 +115,7 @@ else
 end
 
 #if age_question (false), garlic_question (False) and insurance_question (false), print "Almost certainly a vampire"
-if (age_question == false) && (garlic_question == false) && (insurance_question == false)
+if (age_question == false) && (garlic_question != true) && (insurance_question == false)
 	vampire = "Almost certainly a vampire"
 end
 
