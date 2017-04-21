@@ -1,4 +1,3 @@
-
 puts "What is the hamster's name?"
 name = gets.chomp
 
@@ -34,4 +33,3 @@ He/she is believed to be #{hamster_age} years old.
 Its fur color is #{fur_color}.
 He has a volume level of #{volume}.
 Is this hamster a danger to society: #{dangerous}"
-
