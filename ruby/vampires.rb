@@ -1,3 +1,12 @@
+
+#How many employees will we interview?
+puts "How many potential employees will be processed?"
+employees = gets.chomp.to_i
+
+#Do a loop that interviews the number of employees that we'll be interviewing... remember to close at the end of the interview! 
+interviews = 0
+until interviews == employees
+
 puts "What is your name?"
 name = gets.chomp
 
@@ -86,11 +95,8 @@ elsif (age_question == false) && (garlic_question == true) && (insurance_questio
 end
 
 #anyone going by the name of “Drake Cula” or “Tu Fang” print “Definitely a vampire.”
-if name == "Drake Cula"
+if name == "Drake Cula" || name == "Tu Fang"
 	vampire = 4
-elsif name == "Tu Fang"
-	vampire = 4
-else
 end
 
 =begin
@@ -112,3 +118,9 @@ when 5
 else
 	puts "Results inconclusive"
 end
+
+#interview finished, add interview plus 1 so that the loop closes eventually
+interviews += 1
+
+end
+#loop closed
