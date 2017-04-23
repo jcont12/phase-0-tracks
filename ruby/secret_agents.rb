@@ -6,6 +6,20 @@
 5.- print the modified string
 =end 
 
+input = false
+
+until input
+
+#Ask if password will be encrypted or decrypted
+puts "Welcome, would you like encrypt or decrypt password?"
+requirement = gets.chomp
+
+#Ask user for password to be encrypted or decrypted
+puts "Write down password"
+password = gets.chomp
+
+#Conditional statement to encrypt or decrypt below methods on line 67
+
 def  encrypt(string)
 
   index = 0
@@ -21,10 +35,9 @@ def  encrypt(string)
      	index +=1 
     end
   end
-  puts string
+  puts "the encrypted password is #{string}"
 end 
 
-encrypt("abc")
 
 
 =begin
@@ -51,9 +64,19 @@ def decrypt(string)
 	  	current_index +=1
 	  end
 	end
-	puts string
+	puts "the decrypted password is #{string}"
 end
 
-decrypt("abc def")
 
-decrypt(encrypt("swordfish"))
+if requirement == "encrypt" || requirement == "Encrypt" || requirement == "ENCRYPT"
+	encrypt(password)
+	input = true
+elsif requirement == "decrypt" || requirement == "Decrypt" || requirement == "Decrypt"
+    decrypt(password)
+    input = true
+else
+	puts "input not valid, please write down 'encrypt' or 'decrypt'"
+	input = false
+end
+end
+		
