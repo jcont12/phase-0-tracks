@@ -12,10 +12,10 @@ def  encrypt(string)
 
   while index < string.length
     if string[index] == " "
-      index +=1 
+       index +=1 
     elsif string[index] == "z"
-      string[index] = "a"
-      index +=1
+          string[index] = "a"
+          index +=1
     else
 	    string[index] = string[index].next!
      	index +=1 
