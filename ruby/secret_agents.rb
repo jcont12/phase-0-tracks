@@ -21,7 +21,7 @@ def  encrypt(string)
      	index +=1 
     end
   end
-  print string
+  puts string
 end 
 
 encrypt("abc")
@@ -51,7 +51,9 @@ def decrypt(string)
 	  	current_index +=1
 	  end
 	end
-	print string
+	puts string
 end
 
 decrypt("abc def")
+
+decrypt(encrypt("swordfish"))
