@@ -1,0 +1,56 @@
+1. What is a variable? Why might a programmer use a variable?
+Variables are text (words or letters, can't have whitespace separating two words of letters in them) which have a specific value (it can be a string, a number 
+or a boolean). These variables can be called as often as we like on a file and will always return their specific value, unless its value is changed within the file.
+Example: variable --> Name = "Jorge" <-- value. Every time we call name, the code will return "Jorge".
+Programmers use variables so that they can be called throughout the code at any time and return stored information.
+
+2. If the value of first_name is "Abraham" and last_name is "Lincoln", explain the order in which Ruby will run the line full_name = first_name + last_name, 
+and what the final result will be.
+The result will literally be "AbrahamLincoln", since the variable full_name is the first_name variable plus the last_name variable with no whitespace in between.
+
+Data Types
+3. For each of the following data types, write a short definition and give at least one example of when you might use the data type in a program. (Don't use an example we've already provided.)
+
+string - Any word, letter or text in code. It must always be in between quotes. It is used everywhere we want the return to be text.
+integer - any number with no decimals. It is used when arithmetic calculations are required. 
+float - any number but with decimals. It is used when we need to do operation and have the exact number returned.
+nil - nil is the value for nothing, or not applicable(N/A). It can be used when a form is being filled and something is left blank.
+boolean- boolean is either true or false. It can be used for loops (until a variable becomes true, do something).
+
+Algorithms
+4. What is an algorithm?
+An algorithm is a list of steps that are followed in order for a program to turn into a final result.
+
+5. What are two common categories of algorithm in computer science? 
+Sorting and searching, and list (arrays) algorithms
+
+Methods
+6. What is a method? Why might a programmer choose to use a method?
+A method is a set of steps created by a programmer that return a specific value everytime the method is called. A programmer uses a method so that he doesn't have to
+repeat all the steps required to obtain a result, but instead simply call the method and it automatically does all the steps.
+
+7. Define the following terms as they relate to a method. 
+
+return value - The result of the method being called.
+side effect - Side effects are methods that are used not because we require a return from them but instead because we need a variable within to be modified. 
+parameter - A parameter is a value or a set of values that are established which will become inputs with which the method will work to return a return value.
+argument - Arguments are the specific values that are given to the parameters.
+implicit return -  an implicit return is basically the last evaluated expression in a method.
+
+8. What are global scope and method scope? How do those scopes impact the availability of data at different points in a program?
+Global scope works within the whole program, so variables with a global scope will work anywhere if they are called. Method scope means that the variables inside
+the method live and work only within the method and will not work or return any value if used outside of it.
+
+Control Flow
+9. What is control flow? Why might a programmer choose to use flow control?
+Control flow is what allows our program to take different "paths", or in other words to run a different code depending on user input and other commnads. Programmers
+use control flow because without it many different codes would have to be written instead of having a single code file run many different scenarios.
+
+10. Define the following terms as they relate to flow control.
+
+loop - Loop is when we command the computer to run a specific set of steps over and over until a specific condition is met. 
+if - if begins a conditional statemtent, and allows our code to do a specific action when a defined condition is met.
+else - Anything that does not meet our IF or ELSIF conditions.
+elsif - So that two or more conditions can become options for our code, an elsif statements allows us to add another condition to our conditional statement.
+while - While creates a loop that will keep running while a specific condition is not met. 
+until - Until creates a loop that, unlike while loops, will keep running code until a specific condition is met.
