@@ -34,11 +34,21 @@ ake the method return the letters encrypted by encrypt method to their original 
 
 def decrypt(string)
 
-  index = 0
+  current_index = 0
   
-  while index < string.length
-	  if string[index] == " "
-		  index += 1
+  while current_index < string.length
+	  if string[current_index] == " "
+		  current_index += 1
 	  else
-	  	"abcdefghijklmnopqrstuvwxyz".index
+	    letter = string[current_index].downcase
+	  	index_current_number = "abcdefghijklmnopqrstuvwxyz".index(letter)
+	  	index_prior_number = index_current_number - 1
+	    decrypted_letter = "abcdefghijklmnopqrstuvwxyz"[index_prior_number]
+      string[current_index] = decrypted_letter
+	  	current_index +=1
+	  end
+	end
+	print string
+end
 
+decrypt("abc def")
