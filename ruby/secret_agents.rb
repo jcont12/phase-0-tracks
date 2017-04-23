@@ -1,11 +1,5 @@
-=begin 
-1.- Create a method called encrypt
-2.- While loop: WHILE the argument's current index is smaller than the length of the argument
-3.- Select each letter through index and turn it into next letter with .next
-4.- If current index of string is whitespace, do not affect it
-5.- print the modified string
-=end 
 
+#Create a loop to ensure agent's input is equal to 'encrypt' or 'decrypt'
 input = false
 
 until input
@@ -19,6 +13,14 @@ puts "Write down password"
 password = gets.chomp
 
 #Conditional statement to encrypt or decrypt below methods on line 67
+
+=begin 
+1.- Create a method called encrypt
+2.- While loop: WHILE the argument's current index is smaller than the length of the argument
+3.- Select each letter through index and turn it into next letter with .next
+4.- If current index of string is whitespace, do not affect it
+5.- print the modified string
+=end 
 
 def  encrypt(string)
 
@@ -60,14 +62,14 @@ def decrypt(string)
 	  	index_current_number = "abcdefghijklmnopqrstuvwxyz".index(letter)
 	  	index_prior_number = index_current_number - 1
 	    decrypted_letter = "abcdefghijklmnopqrstuvwxyz"[index_prior_number]
-      string[current_index] = decrypted_letter
+        string[current_index] = decrypted_letter
 	  	current_index +=1
 	  end
 	end
 	puts "the decrypted password is #{string}"
 end
 
-
+#Conditional statement 
 if requirement == "encrypt" || requirement == "Encrypt" || requirement == "ENCRYPT"
 	encrypt(password)
 	input = true
