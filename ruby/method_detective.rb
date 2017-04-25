@@ -19,7 +19,7 @@
 "the usual".concat(" suspects")
 #=> "the usual suspects"
 
- " suspects".gsub(" ","the usual ")
+ " suspects".insert(0,"the usual")
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chop
