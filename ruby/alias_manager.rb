@@ -10,7 +10,8 @@ Final input Felicia Torres - Vussit Gimodoe
 =end
 
 #Swap first and last name
-name = []
+def name_swapper(firstname, lastname)
+	
 
 
 
@@ -40,4 +41,6 @@ def consonant_changer(letter)
 	p new_letter
 end
 =end
+
+
 
