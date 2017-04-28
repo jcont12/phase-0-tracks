@@ -47,14 +47,22 @@ name = gets.chomp
 name_arr = name.downcase!.split("").reverse!
 
 #Next, separate all letters and apply changer method to vowels and consonants
-
 name_arr.each do |letter|
   if "aeiou".index(letter) == nil
-    consonant_changer(letter)
+   new_name << consonant_changer(letter)
+  elsif letter == " "
+  new_name << " "
   else
-    vowel_changer(letter)
+    new_name << vowel_changer(letter)
+    new_name.push
   end
-  
 end
+
+# Print out separate names with capitalization!
+downcased = new_name.join.split(" ")
+
+downcased.each {|name| name.capitalize!}
+
+puts "" downcased.join(" ")
 
 
