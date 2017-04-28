@@ -43,7 +43,7 @@ my_array.select do |x|
 	x.odd?
 end
 
-# Select if number less than 7
+# Select if number less than 2
 my_array.take_while do |x|
 	x < 2
 end
@@ -52,3 +52,11 @@ end
 my_array.delete_if do|x|
 	 x < 2
 end
+
+
+# Deletes hash that meet a condition
+my_hash.delete_if {|mascot,city| mascot[0] == "P"}
+
+
+# Keeps only hash that meets a condition
+my_hash.keep_if {|mascot,city| mascot[0] == "P"}
