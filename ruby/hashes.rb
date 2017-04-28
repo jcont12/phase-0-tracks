@@ -1,11 +1,7 @@
 =begin
 	
-write a program that will allow an interior designer to enter:
-the details of a given client:
- name, age, number of children, decor theme, pets.
-keys should be symbols unless you find that you need a string for some reason
 Prompt the designer/user for all of this information.
-Convert any user input to the appropriate data type.
+
 Print the hash back out to the screen when the designer has answered all of the questions.
 Give the user the opportunity to update a key (no need to loop, once is fine). After all, sometimes users make mistakes! If the designer says "none", skip it. But if the designer enters "decor_theme" (for example), your program should ask for a new value and update the :decor_theme key. (Hint: Strings have methods that will turn them into symbols, which would be quite handy here.) You can assume the user will correctly input a key that exists in your hash -- no need to handle user errors.
 Print the latest version of the hash, and exit the program.
@@ -13,20 +9,98 @@ Print the latest version of the hash, and exit the program.
 
 puts "Welcome to client details program! Fill out the following information:"
 
-#create an array were everything will be accessed
-client_detail = {
-	name: "",
-	age: "",
-	children: ""
-}
+#Create a hash were everything will be inserted
+client_detail = {}
 
-#ask information of the client
+#Ask information of the client, inserting answers in hash
 print "name?"
-name = gets.chomp
+client_detail[:name] = gets.chomp
+
 print "age?"
-age = gets.chomp
-print "children?"
-children = gets.chomp.to_i
+client_detail[:age] = gets.chomp.to_i
 
+print "children? (yes/no)"
+kids = gets.chomp
+  if kids == "yes"
+	client_detail[:children] = true
+  else
+	client_detail[:children] = false
+  end
 
-client_detail
+#Creation of an array inside a hash to practice with both arrays and hashes
+if client_detail[:children] == true
+  puts "What are the children's names (separated by commas, only first name)"
+  client_detail[:child_name] = gets.chomp.split(" ") 
+end
+
+print "do they have pets?(yes/no)"
+animals = gets.chomp
+  if animals == "yes"
+	client_detail[:pets] = true
+  else
+	client_detail[:pets] = false
+end
+
+# Once we have compiled information, show the hash info to the user
+puts "This is the clients information:"
+p client_detail
+
+info_update = false
+
+until info_update
+
+puts "Would you like to update information? (if not type 'none', otherwise type:name,age,children,pets)"
+
+	new_info = gets.chomp
+	if new_info == "name"
+		puts "What is the new name?"
+		client_detail[:name] = gets.chomp
+		info_update = true
+	elsif new_info == "age"
+		puts "What is the new age?"
+		client_detail[:age] = gets.chomp
+		info_update = true
+	elsif new_info == "children"
+		puts "Do they have children?"
+		new_kids = gets.chomp
+ 		 if new_kids == "yes"
+			client_detail[:children] = true
+  		else
+			client_detail[:children] = false
+  		end
+		if client_detail[:children] == true
+  		puts "What are the children's names (separated by commas, only first name)"
+  		client_detail[:child_name] = gets.chomp.split(" ") 
+  		else
+  		  client_detail[:child_name] = nil
+		end
+		info_update = true
+	elsif new_info == "pets"
+		puts "Do they pets?"
+		new_animals = gets.chomp
+ 		if new_animals == "yes"
+			client_detail[:pets] = true
+ 		 else
+			client_detail[:pets] = false
+		end
+		info_update = true
+	elsif new_info == "none"
+		puts "Thanks for using Client data program!"
+		info_update = true
+	else
+		puts "I didnt understand you"
+		info_update = false
+	end
+end
+
+puts "The updated client info is:"
+	
+	p client_detail
+	
+	puts "Thanks for using Client data program!"
+
+		
+
+			
+		
+
