@@ -9,8 +9,13 @@ Once name has been changed Capitalize first letter of each word
 Final input Felicia Torres - Vussit Gimodoe
 =end
 
+#Swap first and last name
+name = []
+
+
+
 #Change vowel to the next vowel
-=begin
+
 def vowel_changer(letter)
 	if letter == "u"
 		new_letter = "a"
@@ -35,3 +40,4 @@ def consonant_changer(letter)
 	p new_letter
 end
 =end
+
