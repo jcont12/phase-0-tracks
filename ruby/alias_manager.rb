@@ -9,12 +9,6 @@ Once name has been changed Capitalize first letter of each word
 Final input Felicia Torres - Vussit Gimodoe
 =end
 
-#Swap first and last name
-def name_swapper(firstname, lastname)
-	
-
-
-
 #Change vowel to the next vowel
 
 def vowel_changer(letter)
@@ -42,5 +36,25 @@ def consonant_changer(letter)
 end
 =end
 
+
+USER INTERFACE
+
+puts "Welcome to Alias Creator!"
+puts "Please enter the name to create alias for, when finished type 'quit' "
+name = gets.chomp
+
+#Swapped first and last names, downcased and split into letters
+name_arr = name.downcase!.split("").reverse!
+
+#Next, separate all letters and apply changer method to vowels and consonants
+
+name_arr.each do |letter|
+  if "aeiou".index(letter) == nil
+    consonant_changer(letter)
+  else
+    vowel_changer(letter)
+  end
+  
+end
 
 
