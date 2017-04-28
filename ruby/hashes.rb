@@ -1,18 +1,16 @@
 =begin
-	
-Prompt the designer/user for all of this information.
-
-Print the hash back out to the screen when the designer has answered all of the questions.
-Give the user the opportunity to update a key (no need to loop, once is fine). After all, sometimes users make mistakes! If the designer says "none", skip it. But if the designer enters "decor_theme" (for example), your program should ask for a new value and update the :decor_theme key. (Hint: Strings have methods that will turn them into symbols, which would be quite handy here.) You can assume the user will correctly input a key that exists in your hash -- no need to handle user errors.
-Print the latest version of the hash, and exit the program.
+1.-Create a hash were everything will be inserted
+2.- Ask information of the client, inserting answers in hash
+3.- Once the info is compiled, show hash info to the user
+#If we need to update any of the info, ask the client what to update and update hash, otherwise type none and finish
 =end
 
 puts "Welcome to client details program! Fill out the following information:"
 
-#Create a hash were everything will be inserted
+#1.-Create a hash were everything will be inserted
 client_detail = {}
 
-#Ask information of the client, inserting answers in hash
+#2.-Ask information of the client, inserting answers in hash
 print "name?"
 client_detail[:name] = gets.chomp
 
@@ -45,6 +43,8 @@ end
 puts "This is the clients information:"
 p client_detail
 
+
+#If we need to update any of the info, ask the client what to update and update hash, otherwise type none and finish
 info_update = false
 
 until info_update
