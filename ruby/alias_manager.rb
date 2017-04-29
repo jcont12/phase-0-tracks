@@ -32,9 +32,13 @@ def consonant_changer(letter)
 	end
 end
 
+#So that every alias created can be stored in a hash, we create this hash outside of the loop
+aliases = {}
+
 #---USER INTERFASE---#
 
 puts "Welcome to Alias Creator!"
+
 
 #loop until agent types quit
 quit = false
@@ -58,16 +62,22 @@ until quit
    				new_name << consonant_changer(letter)
   			else
     			new_name << vowel_changer(letter)
-    			new_name.push
   			end
   		end
 # Print out separate names with capitalization!
 		downcased = new_name.join.split(" ")
+
 
 		downcased.each {|name| name.capitalize!}
 
 		name.capitalize!
 
 		puts "#{name} is also known as " + downcased.join(" ")
+
+		
+		aliases[name] = downcased.join(" ")
   	end 
 end
+
+#Prin all aliases
+p aliases
