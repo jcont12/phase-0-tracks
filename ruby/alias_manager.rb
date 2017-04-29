@@ -15,12 +15,10 @@ def vowel_changer(letter)
 	if letter == "u"
 		new_letter = "a"
 	else
-	vowel_index = "aeiou".index(letter)
-    new_letter ="aeiou"[vowel_index.next]
+		vowel_index = "aeiou".index(letter)
+   		new_letter ="aeiou"[vowel_index.next]
 	end
 end
-
-
 
 #Change consonant to the next consonant
 def consonant_changer(letter)
@@ -29,38 +27,47 @@ def consonant_changer(letter)
 	elsif letter == " "
 	  new_letter = " "
 	else
-	consonant_index = "bcdfghjklmnpqrstvwxyz".index(letter)
-    new_letter ="bcdfghjklmnpqrstvwxyz"[consonant_index.next]
+		consonant_index = "bcdfghjklmnpqrstvwxyz".index(letter)
+    	new_letter ="bcdfghjklmnpqrstvwxyz"[consonant_index.next]
 	end
 end
 
-
+#---USER INTERFASE---#
 
 puts "Welcome to Alias Creator!"
-puts "Please enter the name to create alias for, when finished type 'quit' "
-name = gets.chomp
-name_arr = name.downcase!.split(" ")
-name_arr[0], name_arr[1] = name_arr[1], name_arr[0]
-switched_name = name_arr.join(" ")
-chars_arr = switched_name.split("")
 
+#loop until agent types quit
+quit = false
 
+until quit
+
+  puts "Please enter the name to create alias for, when finished type 'quit' "
+  name = gets.chomp
+  	if name == "QUIT" || name == "quit" || name == "Quit"
+  		puts "Safe Mission!"
+  		quit = true 
+  	else
+		name_arr = name.downcase!.split(" ") #downcased and split words
+		name_arr[0], name_arr[1] = name_arr[1], name_arr[0] #switched name positions
+		switched_name = name_arr.join(" ") #turned array to string to separate characters
+		chars_arr = switched_name.split("") #Separated characters
 #Next, separate all letters and apply changer method to vowels and consonants
-new_name = []
-chars_arr.each do |letter|
-  if "aeiou".index(letter) == nil
-   new_name << consonant_changer(letter)
-  else
-    new_name << vowel_changer(letter)
-    new_name.push
-  end
-end
-
+		new_name = []
+		chars_arr.each do |letter|
+  			if "aeiou".index(letter) == nil
+   				new_name << consonant_changer(letter)
+  			else
+    			new_name << vowel_changer(letter)
+    			new_name.push
+  			end
+  		end
 # Print out separate names with capitalization!
-downcased = new_name.join.split(" ")
+		downcased = new_name.join.split(" ")
 
-downcased.each {|name| name.capitalize!}
+		downcased.each {|name| name.capitalize!}
 
-name.capitalize!
+		name.capitalize!
 
-puts "#{name} is also known as " + downcased.join(" ")
+		puts "#{name} is also known as " + downcased.join(" ")
+  	end 
+end
