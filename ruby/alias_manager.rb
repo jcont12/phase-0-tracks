@@ -20,7 +20,6 @@ def vowel_changer(letter)
 	end
 end
 
-vowel_changer ("a")
 
 
 #Change consonant to the next consonant
@@ -40,13 +39,15 @@ end
 puts "Welcome to Alias Creator!"
 puts "Please enter the name to create alias for, when finished type 'quit' "
 name = gets.chomp
+name_arr = name.downcase!.split(" ")
+name_arr[0], name_arr[1] = name_arr[1], name_arr[0]
+switched_name = name_arr.join(" ")
+chars_arr = switched_name.split("")
 
-#Swapped first and last names, downcased and split into letters
-name_arr = name.downcase!.split("").reverse!
 
 #Next, separate all letters and apply changer method to vowels and consonants
 new_name = []
-name_arr.each do |letter|
+chars_arr.each do |letter|
   if "aeiou".index(letter) == nil
    new_name << consonant_changer(letter)
   else
@@ -59,5 +60,7 @@ end
 downcased = new_name.join.split(" ")
 
 downcased.each {|name| name.capitalize!}
+
+name.capitalize!
 
 puts "#{name} is also known as " + downcased.join(" ")
