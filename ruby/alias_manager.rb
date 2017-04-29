@@ -18,7 +18,6 @@ def vowel_changer(letter)
 	vowel_index = "aeiou".index(letter)
     new_letter ="aeiou"[vowel_index.next]
 	end
-	p new_letter
 end
 
 vowel_changer ("a")
@@ -28,16 +27,15 @@ vowel_changer ("a")
 def consonant_changer(letter)
 	if letter == "z"
 		new_letter = "b"
+	elsif letter == " "
+	  new_letter = " "
 	else
 	consonant_index = "bcdfghjklmnpqrstvwxyz".index(letter)
     new_letter ="bcdfghjklmnpqrstvwxyz"[consonant_index.next]
 	end
-	p new_letter
 end
-=end
 
 
-USER INTERFACE
 
 puts "Welcome to Alias Creator!"
 puts "Please enter the name to create alias for, when finished type 'quit' "
@@ -47,11 +45,10 @@ name = gets.chomp
 name_arr = name.downcase!.split("").reverse!
 
 #Next, separate all letters and apply changer method to vowels and consonants
+new_name = []
 name_arr.each do |letter|
   if "aeiou".index(letter) == nil
    new_name << consonant_changer(letter)
-  elsif letter == " "
-  new_name << " "
   else
     new_name << vowel_changer(letter)
     new_name.push
@@ -63,6 +60,4 @@ downcased = new_name.join.split(" ")
 
 downcased.each {|name| name.capitalize!}
 
-puts "" downcased.join(" ")
-
-
+puts "#{name} is also known as " + downcased.join(" ")
