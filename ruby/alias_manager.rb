@@ -12,7 +12,7 @@ Final input Felicia Torres - Vussit Gimodoe
 #Change vowel to the next vowel
 
 def vowel_changer(letter)
-	if letter == "u"
+	if  letter == "u"
 		new_letter = "a"
 	else
 		vowel_index = "aeiou".index(letter)
@@ -22,10 +22,10 @@ end
 
 #Change consonant to the next consonant
 def consonant_changer(letter)
-	if letter == "z"
+	if  letter == "z"
 		new_letter = "b"
 	elsif letter == " "
-	  new_letter = " "
+	 	new_letter = " "
 	else
 		consonant_index = "bcdfghjklmnpqrstvwxyz".index(letter)
     	new_letter ="bcdfghjklmnpqrstvwxyz"[consonant_index.next]
@@ -39,7 +39,6 @@ aliases = {}
 
 puts "Welcome to Alias Creator!"
 
-
 #loop until agent types quit
 quit = false
 
@@ -47,7 +46,7 @@ until quit
 
   puts "Please enter the name to create alias for, when finished type 'quit' "
   name = gets.chomp
-  	if name == "QUIT" || name == "quit" || name == "Quit"
+  	if 	name == "QUIT" || name == "quit" || name == "Quit"
   		puts "Safe Mission!"
   		quit = true 
   	else
@@ -67,17 +66,15 @@ until quit
 # Print out separate names with capitalization!
 		downcased = new_name.join.split(" ")
 
-
 		downcased.each {|name| name.capitalize!}
 
 		name.capitalize!
 
 		puts "#{name} is also known as " + downcased.join(" ")
-
 		
 		aliases[name] = downcased.join(" ")
   	end 
 end
 
-#Prin all aliases
+#Print all aliases
 p aliases
