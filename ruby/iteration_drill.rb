@@ -131,6 +131,14 @@ p extinct_animals_less_2000
 # Do not use any special built-in methods.
 # ----
 
+extinct_animals.each do |key,value|
+	new_value = value - 3
+  extinct_animals[key] = new_value
+end
+
+p extinct_animals
+
+
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
 # "Andean Cat"
@@ -138,6 +146,32 @@ p extinct_animals_less_2000
 # "Saiga Antelope"
 # Do not use any special built-in methods.
 # ----
+
+def search(array,animal)
+  found = []
+	array.each do |key,value|
+		if key == animal
+		found << "yes"
+		end 
+	end 
+		if found[0] == "yes"
+		  puts "#{animal} in list"
+		else 
+		  puts "#{animal} not in list"
+	  end
+end 
+
+list = 0 
+index = 0
+until list == 3
+
+animals = ["Andean Cat", "Dodo", "Saiga Antelope"]
+
+
+search(extinct_animals, animals[index])
+index += 1
+list += 1
+end 
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
