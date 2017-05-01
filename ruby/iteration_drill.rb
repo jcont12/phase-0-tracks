@@ -1,5 +1,5 @@
 # Array Drills
-
+=begin
 zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "batteries"]
 
@@ -88,7 +88,7 @@ zombie_apocalypse_supplies.concat(other_survivor_supplies)
 p zombie_apocalypse_supplies
 
 # ----
-
+=end 
 # Hash Drills
 
 extinct_animals = {
@@ -105,9 +105,25 @@ extinct_animals = {
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
 
+extinct_animals.each do |key,value|
+	puts "#{key} - #{value}"
+	p "*"
+end
+
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
 # ----
+
+extinct_animals_less_2000 = {}
+
+extinct_animals.each do |key,value|
+	if value < 2000
+		extinct_animals_less_2000[key] = value
+	end
+end
+
+p extinct_animals_less_2000
+
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
