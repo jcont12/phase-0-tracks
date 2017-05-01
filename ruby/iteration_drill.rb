@@ -1,5 +1,5 @@
 # Array Drills
-=begin
+
 zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "batteries"]
 
@@ -88,7 +88,7 @@ zombie_apocalypse_supplies.concat(other_survivor_supplies)
 p zombie_apocalypse_supplies
 
 # ----
-=end 
+
 # Hash Drills
 
 extinct_animals = {
