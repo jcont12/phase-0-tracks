@@ -177,4 +177,15 @@ end
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
-# ----
+
+# I KNOW the method is .shift but only works for first key-value pair, had to delete and reassign until my desired object became the first in list.
+extinct_animals.delete("Tasmanian Tiger")
+extinct_animals["Tasmanian Tiger"] = 1936
+extinct_animals.delete("Eastern Hare Wallaby")
+extinct_animals["Eastern Hare Wallaby"] = 1890
+extinct_animals.delete("Dodo")
+extinct_animals["Dodo"] = 1662
+extinct_animals.delete("Pyrenean Ibex")
+extinct_animals["Pyrenean Ibex"] = 1936
+
+extinct_animals.shift
