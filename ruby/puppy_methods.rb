@@ -26,6 +26,11 @@ class Puppy
   	end
   puts "*moves*"
   end
+
+  def initialize
+  	print "Intializing new puppy instance..."
+  end
+
 end
 
 Funky = Puppy.new
