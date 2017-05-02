@@ -1,0 +1,46 @@
+Data Structures
+1. Why are data structures useful in programming?
+Data structures help us to store and organize a large number of items in a single variable, so that we can call methods
+and iterate through every value inside the data structure if we need to, or call it whenever we need a specific value
+within the data structure, among other different options.
+
+Arrays
+2. Define "array" and describe the characteristics of an array.
+An array is a group of items that is stored inside a variable and that are automatically indexed starting from 0 for every
+value inside the array (first value is 0, second value 1 and so on). They are stored inside brackets [] and are separated
+by commas.
+
+3. Give two original examples of data sets that an array might be well-suited for.
+A shopping list and the lottery drawing numbers.
+
+Hashes
+4. Define "hash" and describe the characteristics of a hash.
+A hash is an array that instead of being organized by indexes starting from 0 for every value, every value is indexed by
+a specific key that we create and name whatever we want. Therefore a hash is full of key-value pairs. 
+
+5. Give two original examples of data sets that a hash might be well-suited for.
+A phone list with a contact name and a phone number, and an inventory list that stores the item name and the count of items.
+
+Iteration
+6. Why is iteration useful?
+Iteration is useful because we can automatically command the computer to run a certain set of code for every single value
+specified in an array or hash for the iteration, without having to call each one independently. 
+
+7. Give an example of a real-life task that would require iteration if you wrote an algorithm for it.
+Calling assistance of students from a list, where we would mark whether the student is attending class or not.
+example:
+students = {
+John: Attend,
+Sue: Not attend,
+Mary: Attend
+}
+
+Blocks
+8. What is a block?
+Blocks are sets of code (commands) given to the computer between commands 'do' and 'end' (which can also be 
+represented by {}) for an array, . This code is to be run with an iteration of an array.
+
+9. What is a block parameter, and where does its value come from?
+The block parameter is a name or letter with which we identify every value in an array that we will be iterating 
+and running block for. 
+ 
