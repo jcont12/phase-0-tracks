@@ -1,13 +1,13 @@
 class Santa
-	attr_reader :age, :ethnicity
-	attr_accessor :age, :reindeer_ranking, :gender
+	attr_reader :name, :age, :ethnicity
+	attr_accessor :reindeer_ranking, :gender 
 
-	def initialize(gender,ethnicity)
+	def initialize(gender,ethnicity,age)
 			puts "Initializing Santa instance..."
 			@gender = gender
 			@ethnicity = ethnicity
 			@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-			@age = "0"
+			@age = age
 	end
 
 	def speak
@@ -18,7 +18,6 @@ class Santa
 		puts "That was a good #{cookie}!"
 	end
 
-#These are getter methods in order to access a specified santa's  attribute
 
 #Setter methods
 def celebrate_birthday=(new_age)
@@ -39,12 +38,26 @@ end
 santas = []
 genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 ethnicities = ["black", "Latino", "white", "Japanese", "Prefer not to say", "mystical creature (unicorn)","N/A"]
+age = [] #Will be filled by 0 to 140 for random selection
 
 
 genders.length.times do |i|
-	santas << Santa.new(genders[i],ethnicities[i])
+	santas << Santa.new(genders[i],ethnicities[i],age[i])
 end
 
+#set 140 ages
+140.times do |i|
+  age << i + 1
+end
+
+#Do 100 santas with varying genders, ethnicities and ages
+100.times do 
+  santas << Santa.new(genders.sample, ethnicities.sample, age.sample)
+end 
+
+
+
+#----TEST RESULTS-----
 p santas[1].age
 p santas[1]. ethnicity
 santas[1].celebrate_birthday=(santas[1].age)
