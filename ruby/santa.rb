@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :age, :reindeer_ranking, :gender
+
 	def initialize(gender,ethnicity)
 			puts "Initializing Santa instance..."
 			@gender = gender
@@ -15,17 +18,8 @@ class Santa
 		puts "That was a good #{cookie}!"
 	end
 
-	def gender_change
-	end
-
 #These are getter methods in order to access a specified santa's  attribute
-	def age
-		@age
-	end
 
-	def ethnicity
-		@ethnicity
-	end
 #Setter methods
 def celebrate_birthday=(new_age)
 	  @age = new_age.to_i + 1
@@ -36,10 +30,6 @@ def celebrate_birthday=(new_age)
 	    reindeer_index = @reindeer_ranking.index(name)
 	    insert_at = @reindeer_ranking.length - 1
 	  @reindeer_ranking.insert(insert_at,@reindeer_ranking.delete_at(reindeer_index) )
-	end
-
-	def gender=(gender)
-		@gender = gender
 	end
 
 end 
