@@ -2,7 +2,7 @@
 
 class Guessgame
 	attr_reader :hidden_word, :word
-	attr_accessor :guess
+	attr_accessor :guesscount
 
 	def initialize
 		@word = []
@@ -25,7 +25,13 @@ class Guessgame
 
 	def guess(letter)
 		@guess << letter.downcase
-		@guess.compact
+		@word[0].each do |l|
+			if letter == l
+				puts "yes"
+			else
+				puts "no"
+			end
+		end
 	end
 end
 
@@ -39,13 +45,17 @@ puts "Welcome to the Guessing game"
 game = Guessgame.new
 #Define what the mystery word will be through input
 puts "Type word for competitor to guess"
-input = gets.chomp
-game.add(input)
-game.hide(input)
+input_w = gets.chomp
+game.add(input_w)
+game.hide(input_w)
 
-
+puts "guess letter"
+input_l = gets.chomp.downcase
 p game.word
-p game.hidden_word
+game.guess(input_l)
+
+
+
 #Show the competitor the "_ _ _ _ _ _" version and let it know the amount of guesses he will have
 
 #Ask the user to input a letter
