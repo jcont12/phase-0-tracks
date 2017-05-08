@@ -25,9 +25,9 @@ class Guessgame
 
 	def guess(letter)
 		@guess << letter.downcase
-		@word[0].each do |l|
-			if letter == l
-				p @word[0].index(l)
+		@word[0].each_index do |i|
+			if @word.dig(0,i) == letter
+				p i
 			else
 				puts "no"
 			end
