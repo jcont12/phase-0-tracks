@@ -9,7 +9,6 @@ class Guessgame
 		@hidden_word = []
 		@guess = []
 		@guesscount = 0
-		@is_over = false
 		@successful= false
 	end
 
@@ -34,10 +33,6 @@ class Guessgame
 	end
 end
 
-game = Guessgame.new
-
-game.add("Fernanda")
-
 #-------DRIVER CODE--------------
 
 puts "Welcome to the Guessing game"
@@ -50,17 +45,22 @@ input_w = gets.chomp
 game.add(input_w)
 game.hide(input_w)
 game.guesscount = game.hidden_word.length + 5 #Give the user a fair amount of guesses... the number of letters + 5 (random) 
+puts "---------------"
 
 #Show the competitor the "_ _ _ _ _ _" version and let it know the amount of guesses he will have
 puts "New word ready for guess = #{game.hidden_word} you have #{game.guesscount} tries!"
 puts "---------------"
 
-until game.is_over || game.successful || game.guesscount == 0
+until game.successful || game.guesscount == 0
 	puts "guess a letter"
-	input_l = gets.chomp.downcase
-	game.guess(input_l)
-	game.guesscount = game.guesscount - 1
-	p game.guesscount
+	if game.hidden_word == game.word[0]
+		puts "CONGRATULATIONS!!! YOU WON!!"
+		game.successful = true
+	else 
+		input_l = gets.chomp.downcase
+		game.guess(input_l)
+		game.guesscount = game.guesscount - 1
+	end
 end
 
 
