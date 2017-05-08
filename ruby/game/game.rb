@@ -1,10 +1,13 @@
 #Create a game class
 
 class Guessgame
+	attr_reader :hidden_word
+	attr_accessor :guess
 
 	def initialize
-		@word = 
+		@word = []
 		@hidden_word = []
+		@guess = []
 	end
 
 	def add(word)
@@ -16,13 +19,19 @@ class Guessgame
 		@hidden_word
 	end
 
+	def guess(letter)
+		@guess << letter
+		@guess
+	end
 end
 
 game = Guessgame.new
 
 game.add("Fernanda")
 
+#-------DRIVER CODE--------------
 
+puts "Welcome to the Guessing game"
 #Define what the mystery word will be through input
 
 #Create a method that turns the word into "_ _ _ _ _ _ " format

@@ -9,7 +9,13 @@ describe Guessgame do
   end
 
   it "Hides word into '_ _ _ _' format" do
-  	expect(game.hide"Word").to eq ["_","_","_","_"]
+  	expect(game.hide("Word")).to eq ["_","_","_","_"]
+  end
+
+  it "adds guessed letters into array format" do
+  	expect(game.guess("a")).to eq ["a"]
+  	expect(game.guess("b")).to eq ["a","b"]
+
   end
 
 end
