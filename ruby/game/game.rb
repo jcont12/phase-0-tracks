@@ -1,8 +1,8 @@
 #Create a game class
 
 class Guessgame
-	attr_reader :hidden_word, :word
-	attr_accessor :guesscount
+	attr_reader :word
+	attr_accessor :guesscount, :hidden_word
 
 	def initialize
 		@word = []
@@ -25,13 +25,12 @@ class Guessgame
 
 	def guess(letter)
 		@guess << letter.downcase
-		@word[0].each_index do |i|
-			if @word.dig(0,i) == letter
-				p i
-			else
-				puts "no"
+		@word[0].each_index do |i|  #Iterate through indexes instead of values
+			if @word.dig(0,i) == letter #since @word is an array inside an array, dig helps us look in word ([0]) each index for the letter.
+				@hidden_word[i] = letter #if found, substitute "_" for the letter guessed in the same index for @hidden_word
 			end
 		end
+		p @hidden_word
 	end
 end
 
@@ -43,15 +42,19 @@ game.add("Fernanda")
 
 puts "Welcome to the Guessing game"
 game = Guessgame.new
+puts "---------------"
 #Define what the mystery word will be through input
 puts "Type word for competitor to guess"
 input_w = gets.chomp
 game.add(input_w)
 game.hide(input_w)
+game.guesscount = game.hidden_word.length + 4
+
+puts "New word ready for guess = #{game.hidden_word} you have #{game.guesscount} tries!"
+puts "---------------"
 
 puts "guess letter"
 input_l = gets.chomp.downcase
-p game.word
 game.guess(input_l)
 
 
