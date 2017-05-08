@@ -3,15 +3,24 @@
 class Guessgame
 
 	def initialize
-		@word = []
+		@word = 
 		@hidden_word = []
 	end
 
 	def add(word)
-		@word << word
+		@word << word.downcase.split("")
 	end
-	
+
+	def hide(word)
+		word.length.times {@hidden_word << "_" }
+		@hidden_word
+	end
+
 end
+
+game = Guessgame.new
+
+game.add("Fernanda")
 
 
 #Define what the mystery word will be through input
