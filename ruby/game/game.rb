@@ -8,6 +8,8 @@ class Guessgame
 		@word = []
 		@hidden_word = []
 		@guess = []
+		@guesscount = 0
+		@succesful = false
 	end
 
 	def add(word)
@@ -20,8 +22,8 @@ class Guessgame
 	end
 
 	def guess(letter)
-		@guess << letter
-		@guess
+		@guess << letter.downcase
+		@guess.compact
 	end
 end
 

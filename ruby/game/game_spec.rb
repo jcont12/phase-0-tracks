@@ -14,8 +14,7 @@ describe Guessgame do
 
   it "adds guessed letters into array format" do
   	expect(game.guess("a")).to eq ["a"]
-  	expect(game.guess("b")).to eq ["a","b"]
-
+  	expect(game.guess("B")).to eq ["a","b"]
   end
 
 end
