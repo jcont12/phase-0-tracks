@@ -1,7 +1,7 @@
 #Create a game class
 
 class Guessgame
-	attr_reader :word, :is_over, :guessed
+	attr_reader :word, :guessed
 	attr_accessor :guesscount, :hidden_word, :successful
 
 	def initialize
@@ -55,12 +55,9 @@ puts "---------------"
 #Start the guessing loop... first thing to check is if word is already completed, if not ask for letter and apply guess method, decrease guesscount
 until game.successful || game.guesscount == 0
 	puts "guess a letter"
-	input_l = gets.chomp.downcase
-	if game.hidden_word == game.word[0]
-		puts "CONGRATULATIONS!!! THE MYSTERY WORD IS - #{game.word.join} - YOU WON!! press enter to exit" #if word is completed, congratulate the user
-		game.successful = true
-	elsif
-		game.guessed.include?(input_l)
+	input_l = gets.chomp.downcase 
+	if
+		game.guessed.include?(input_l) #find out if the word guessed is already included in the guessed options
 		puts "you have already used this word, try another one"
 	else
 		game.guess(input_l)
@@ -70,6 +67,10 @@ until game.successful || game.guesscount == 0
 		if game.guesscount == 0
 			puts "HA-ha! too bad..you ran out of guesses!! better luck next time!!" #if guess counter runs out and he didn't finish, taunt
 		end
+	end
+	if game.hidden_word == game.word[0]
+		puts "CONGRATULATIONS!!! THE MYSTERY WORD IS - #{game.word.join} - YOU WON!!" #if word is completed, congratulate the user
+		game.successful = true
 	end
 end
 
