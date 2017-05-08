@@ -1,8 +1,8 @@
 #Create a game class
 
 class Guessgame
-	attr_reader :word
-	attr_accessor :guesscount, :hidden_word
+	attr_reader :word, :is_over
+	attr_accessor :guesscount, :hidden_word, :successful
 
 	def initialize
 		@word = []
@@ -10,7 +10,7 @@ class Guessgame
 		@guess = []
 		@guesscount = 0
 		@is_over = false
-		@succesful = false
+		@successful= false
 	end
 
 	def add(word)
@@ -43,23 +43,28 @@ game.add("Fernanda")
 puts "Welcome to the Guessing game"
 game = Guessgame.new
 puts "---------------"
+
 #Define what the mystery word will be through input
 puts "Type word for competitor to guess"
 input_w = gets.chomp
 game.add(input_w)
 game.hide(input_w)
-game.guesscount = game.hidden_word.length + 4
+game.guesscount = game.hidden_word.length + 5 #Give the user a fair amount of guesses... the number of letters + 5 (random) 
 
+#Show the competitor the "_ _ _ _ _ _" version and let it know the amount of guesses he will have
 puts "New word ready for guess = #{game.hidden_word} you have #{game.guesscount} tries!"
 puts "---------------"
 
-puts "guess letter"
-input_l = gets.chomp.downcase
-game.guess(input_l)
+until game.is_over || game.successful || game.guesscount == 0
+	puts "guess a letter"
+	input_l = gets.chomp.downcase
+	game.guess(input_l)
+	game.guesscount = game.guesscount - 1
+	p game.guesscount
+end
 
 
 
-#Show the competitor the "_ _ _ _ _ _" version and let it know the amount of guesses he will have
 
 #Ask the user to input a letter
 
