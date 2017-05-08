@@ -1,6 +1,18 @@
-
-
 #Create a game class
+
+class Guessgame
+
+	def initialize
+		@word = []
+		@hidden_word = []
+	end
+
+	def add(word)
+		@word << word
+	end
+	
+end
+
 
 #Define what the mystery word will be through input
 
