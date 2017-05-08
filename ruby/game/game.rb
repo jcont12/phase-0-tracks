@@ -1,13 +1,13 @@
 #Create a game class
 
 class Guessgame
-	attr_reader :word, :is_over
+	attr_reader :word, :is_over, :guessed
 	attr_accessor :guesscount, :hidden_word, :successful
 
 	def initialize
 		@word = []
 		@hidden_word = []
-		@guess = []
+		@guessed = []
 		@guesscount = 0
 		@successful= false
 	end
@@ -23,7 +23,7 @@ class Guessgame
 	end
 
 	def guess(letter)
-		@guess << letter.downcase
+		@guessed << letter.downcase
 		@word[0].each_index do |i|  #Iterate through indexes instead of values
 			if @word.dig(0,i) == letter #since @word is an array inside an array, dig helps us look in word ([0]) each index for the letter.
 				@hidden_word[i] = letter #if found, substitute "_" for the letter guessed in the same index for @hidden_word
@@ -54,12 +54,17 @@ puts "---------------"
 until game.successful || game.guesscount == 0
 	puts "guess a letter"
 	if game.hidden_word == game.word[0]
-		puts "CONGRATULATIONS!!! YOU WON!!"
+		puts "CONGRATULATIONS!!! THE MYSTERY WORD IS - #{game.word.join} - YOU WON!!"
 		game.successful = true
 	else 
 		input_l = gets.chomp.downcase
 		game.guess(input_l)
 		game.guesscount = game.guesscount - 1
+		puts "You have #{game.guesscount} guesses left and have already used letters: #{game.guessed}"
+		puts "---------------"
+		if game.guesscount == 0
+			puts "HA-ha! too bad..you ran out of guesses!! better luck next time!!"
+		end
 	end
 end
 
