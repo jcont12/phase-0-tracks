@@ -22,6 +22,7 @@ class Guessgame
 		@hidden_word
 	end
 
+#If letter is in the mystery word, update "_" into corresponding letter, otherwise don't.. 
 	def guess(letter)
 		@guessed << letter.downcase
 		@word[0].each_index do |i|  #Iterate through indexes instead of values
@@ -29,7 +30,7 @@ class Guessgame
 				@hidden_word[i] = letter #if found, substitute "_" for the letter guessed in the same index for @hidden_word
 			end
 		end
-		p @hidden_word
+		p @hidden_word #give feedback of results
 	end
 end
 
@@ -51,19 +52,23 @@ puts "---------------"
 puts "New word ready for guess = #{game.hidden_word} you have #{game.guesscount} tries!"
 puts "---------------"
 
+#Start the guessing loop... first thing to check is if word is already completed, if not ask for letter and apply guess method, decrease guesscount
 until game.successful || game.guesscount == 0
 	puts "guess a letter"
+	input_l = gets.chomp.downcase
 	if game.hidden_word == game.word[0]
-		puts "CONGRATULATIONS!!! THE MYSTERY WORD IS - #{game.word.join} - YOU WON!!"
+		puts "CONGRATULATIONS!!! THE MYSTERY WORD IS - #{game.word.join} - YOU WON!! press enter to exit" #if word is completed, congratulate the user
 		game.successful = true
-	else 
-		input_l = gets.chomp.downcase
+	elsif
+		game.guessed.include?(input_l)
+		puts "you have already used this word, try another one"
+	else
 		game.guess(input_l)
 		game.guesscount = game.guesscount - 1
-		puts "You have #{game.guesscount} guesses left and have already used letters: #{game.guessed}"
+		puts "You have #{game.guesscount} guesses left and have already used letters: #{game.guessed}" #Let the user know how many guesses he has left
 		puts "---------------"
 		if game.guesscount == 0
-			puts "HA-ha! too bad..you ran out of guesses!! better luck next time!!"
+			puts "HA-ha! too bad..you ran out of guesses!! better luck next time!!" #if guess counter runs out and he didn't finish, taunt
 		end
 	end
 end
@@ -71,17 +76,14 @@ end
 
 
 
-#Ask the user to input a letter
-
-#If letter is in the mystery word, update "_" into corresponding letter, otherwise don't... in both cases assign guesses one less try and give feedback
-
-#Let the user know how many guesses he has left
-
-#if word is completed, congratulate the user
-
-#if guess counter runs out and he didn't finish, taunt
 
 
-#WATCH  OUT:
-#Dont let user write two words
-#Dont let user repeat a letter 
+
+
+
+
+
+
+
+
+

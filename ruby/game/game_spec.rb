@@ -12,9 +12,12 @@ describe Guessgame do
   	expect(game.hide("Word")).to eq ["_","_","_","_"]
   end
 
-  it "adds guessed letters into array format" do
-  	expect(game.guess("a")).to eq ["a"]
-  	expect(game.guess("B")).to eq ["a","b"]
+  it "Substitutes guessed letters into hidden word format if letter is there" do
+  	game.add("Word")
+  	game.hide("Word")
+  	game.guess("a")
+  	game.guess("o")
+  	expect(game.hidden_word).to eq ["_","o","_","_"]
   end
 
 end
