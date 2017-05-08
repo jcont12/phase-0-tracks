@@ -27,7 +27,7 @@ class Guessgame
 		@guess << letter.downcase
 		@word[0].each do |l|
 			if letter == l
-				puts "yes"
+				p @word[0].index(l)
 			else
 				puts "no"
 			end
