@@ -111,3 +111,5 @@ end
 
 #class attributes
 
+#The STATE_DATA variable is a constant and its scope is anywhere in the file.
+
