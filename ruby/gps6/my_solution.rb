@@ -1,29 +1,38 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Jae Easley ].
+# We spent [1] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# Makes a link to a second related Ruby file
+# and virtually imports the file
+# require takes the full file path as opposed to 
+# require_relative which does not
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+  # Creates a new instance of the VirusPredictor class with instance variables
+  # passed as parameters to the .new call
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # Calls .predicted_deaths and .speed_of_spread methods and
+  # provides the output of those private methods
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+  # Takes the state's data and multiplies population by a factor
+  # determined by the state's population density
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +50,9 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  # Takes the state's data and determines the speed of spread
+  # based on a factor of population density
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -70,18 +81,33 @@ end
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
 
+STATE_DATA.each do |state, data|
+  state_prediction = VirusPredictor.new(state, data[:population_density], data[:population])
+  state_prediction.virus_effects
+end
 
 #=======================================================================
 # Reflection Section
+# EXPLANATION OF require_relative: Makes a link to a second related Ruby file and virtually imports the file,
+# require takes the full file path as opposed to equire_relative which takes a file in same folder.
+
+#The difference between the hashes is that in one the key is presented with the Rocket symbol and the other with the colon as a symbol.
+
+#Using each methods.
+
+#Instance variables are not supposed to be used as a parameter or argument, ever.
+
+#class attributes
+
