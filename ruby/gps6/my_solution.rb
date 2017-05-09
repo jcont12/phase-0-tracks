@@ -100,3 +100,14 @@ end
 
 #=======================================================================
 # Reflection Section
+# EXPLANATION OF require_relative: Makes a link to a second related Ruby file and virtually imports the file,
+# require takes the full file path as opposed to equire_relative which takes a file in same folder.
+
+#The difference between the hashes is that in one the key is presented with the Rocket symbol and the other with the colon as a symbol.
+
+#Using each methods.
+
+#Instance variables are not supposed to be used as a parameter or argument, ever.
+
+#class attributes
+
