@@ -1,0 +1,32 @@
+1. What are classes? Be sure to define the following terms in your explanation and describe the relationships between them:
+class - A class is a categorization or grouping of different values or objects into a similar category, a category that shares behaviours and attributes but
+in which each specific instance (value) van have varying characteristics and each is an individual object. 
+
+state - State is the individual information of every instance (object) of a class that is stored through instance variables.
+
+behavior - Behaviour are translated to methods, methods that are specific of a class, therefore every object (instance) of the class has the ability to act 
+the specific behaviour related to the class.
+
+instance variable - variables assigned to instances that allow us to store the individual information of each object on the class within the variable.
+
+instance method - The methods that can  be publicly called for the instane of a class and only for the class it belongs to. The set of instance methods create the 
+behaviour of the class.
+
+2. What are attributes?
+Attributes are the defining characteristics that differentiate instanes of a class, or in other words the set of qualitities that individualize every instance of a class.
+
+3. Give an example of a real world object, and describe how you might assign its attributes if you were to design a class to represent that object.
+We could create a class called SODAS, in which we could assign many different attributes to distinguish each (brand, flavour, size, can_color, etc)
+
+4. What is the purpose of the initialize method? When does it run?
+The initialize method is a method that runs automatically everytime an instance of a class is created ("name" = "class".new). We can set attributes to be called
+in the initialize method so that the instance is created with a specific set of attributes.
+
+5. What are modules?
+Modules are sets of methods that create a behaviour that can be called upon and that help compartmenalize different methods into one module. We can create 
+methods or we can call upon already created methods in order to get something done without having to write the whole code.
+
+6. What are the different ways you can use a module?
+We can use modules to create methods that two different classes might share and could call upon. We can also use a method to save all the hardwork that we would 
+have to do in order for code to emulate what a simple already created method can do. Finally we can use methods to comparmentalize methods and run different methods
+for similar purposes without risking a mix or overwrite of methods.
