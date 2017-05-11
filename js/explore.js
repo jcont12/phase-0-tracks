@@ -4,7 +4,9 @@
 //3.- Get the length of the word, and print each letter from last to first using index and add them
 
 function reverse(word) {
-	console.log(word)
+	var index = word.length
+	console.log(index)
+	console.log(word[0])
 }
 
 reverse("Jorge")
