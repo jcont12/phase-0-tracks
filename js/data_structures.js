@@ -36,10 +36,11 @@ function Car(brand,color) {
 	console.log("New car:", this);
 	this.brand = brand;
 	this.color = color;
-	this.description = function() { console.log("This " this.brand " is " this.color)} 
+	this.description = function() { console.log("This " + this.brand + " is " + this.color)} 
 	console.log("CAR INITIALIZATION COMPLETE");
 }
 
 var newVehicle = new Car("toyota","red");
 console.log(newVehicle)
+newVehicle.description()
 
