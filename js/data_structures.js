@@ -1,3 +1,4 @@
+/*
 // Declare two separate arrays
 
 var colors = ["Blue","Green","purple","black"];
@@ -27,4 +28,18 @@ for (var i = 0; i < horseNames.length; i++) {
 }
 
 console.log(horseList)
+*/
+
+//write a constructor function for a car with a fuew properties of various data types, including at least one function.
+
+function Car(brand,color) {
+	console.log("New car:", this);
+	this.brand = brand;
+	this.color = color;
+	this.description = function() { console.log("This " this.brand " is " this.color)} 
+	console.log("CAR INITIALIZATION COMPLETE");
+}
+
+var newVehicle = new Car("toyota","red");
+console.log(newVehicle)
 
