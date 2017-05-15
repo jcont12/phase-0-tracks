@@ -34,21 +34,18 @@ longest(phrases)
 //4.- If any of the keyvalue pairs on objects 1 is equal to an objects2 value pair declare true
 
 
-var objects1 = {name: "Steven", age: 54}
-var objects2 = {name: "Tamir", age: 54}
-
-console.log(objects1.length)
+var list1 = {name: "Steven", age: 54};
+var list2 = {name: "Tamir", age: 54};
 
 function compare(objects1, objects2) {
 	for (var property in objects1) {
-		console.log(property + ":" + objects1[property])
-    }
-		for (var property in objects2) {
-		console.log(property + ":" + objects2[property])
-    }
+		if (property + ":" + objects1[property] == property + ":" + objects2[property]) {
+			console.log(true)
+		}
+	}
 }
 
-compare(objects1,objects2)
+compare(list1,list2)
 
 //Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
 //So if we ran your function with an argument of 3, we would get an array of 3 random words back.
