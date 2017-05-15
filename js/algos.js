@@ -58,5 +58,14 @@ compare(list1,list2)
 //3.- While a variable is smaller than the number argument, create a random word
 //4.- Limit the word to have a maximum of 10 characters
 
+function wordGenerator(integer) {
+	array = []
+	for (var i = 0; i < integer; i++) {
+		console.log("word")
+	}
+}
+
+wordGenerator(4)
+
 
 //Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
