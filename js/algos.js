@@ -30,8 +30,7 @@ longest(phrases)
 
 //1.- Create a function that takes in two objects
 //2.- Iterate through objects1, so that every keyvalue pair is analyzed
-//3.- While iterating on objects1, when analizing the first keyvalue pair an iteration of object 2 keyvalue pairs must be done
-//4.- If any of the keyvalue pairs on objects 1 is equal to an objects2 value pair declare true
+//3.- If any of the keyvalue pairs on objects 1 is equal to an objects2 value pair declare true
 
 
 var list1 = {name: "Steven", age: 54};
@@ -61,7 +60,7 @@ compare(list1,list2)
 function wordGenerator(integer) {
 	array = []
 	for (var i = 0; i < integer; i++) {
-		array.push("sdflsfdj")
+		array.push("randomWord") //Unable to figure out how to generate random word, every approach needed either a random # or letter and was not able to figure out how to do it.
 	}
 }
 
