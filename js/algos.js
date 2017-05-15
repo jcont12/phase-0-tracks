@@ -13,9 +13,9 @@ var orderedPhrases = []
 function longest(array) {
 	var orderedPhrases = []
 	for (var index = 100; index > 0; index--) {
-		for (var i = 0; i < phrases.length; i++) {
-			if (index == phrases[i].length){
-				orderedPhrases.push(phrases[i])
+		for (var i = 0; i < array.length; i++) {
+			if (index == array[i].length){
+				orderedPhrases.push(array[i])
 			}
 		}
 	}
@@ -61,11 +61,17 @@ compare(list1,list2)
 function wordGenerator(integer) {
 	array = []
 	for (var i = 0; i < integer; i++) {
-		console.log("word")
+		array.push("sdflsfdj")
 	}
 }
 
 wordGenerator(4)
-
+console.log(array)
 
 //Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+
+for (var i = 0; i <11; i++) {
+	wordGenerator(3)
+	console.log(array)
+	longest(array)
+}
