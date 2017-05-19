@@ -1,0 +1,10 @@
+You've joined two tables before. How do you join three?
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+SELECT users.First_name, users.Last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON users.id=reviews.user_id JOIN businesses ON businesses.id=reviews.business_id;
+Mandy|Kaling|JoeBob's Sportz Barn|5|Great Value and Quality
+Bradford|Pitt|Plumbing by Janet|2|Thought it would be much better
+Stevem|Wonder|Lotus Yoga|4|Loved the service, could improve facilities
+
+SELECT users.First_name, users.Last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON users.id=reviews.user_id JOIN businesses ON businesses.id=reviews.business_id WHERE business_id=7;
+Mandy|Kaling|JoeBob's Sportz Barn|5|Great Value and Quality
