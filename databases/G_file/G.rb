@@ -17,6 +17,7 @@ db = SQLite3::Database.new("items.db")
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS items(
   id INTEGER PRIMAY KEY,
+  name VARCHAR(255),
   owner VARCHAR(255),
   location VARCHAR(255),
   type VARCHAR(255),
@@ -26,9 +27,12 @@ SQL
 
 db.execute(create_table_cmd)
 
-def add_to_list(name,owner,location,type,date)
-  db.execute("INSERT INTO items(name,owner,location,type,date)")
+
+def add_to_list(db,name,owner,location,type,date)
+  db.execute("INSERT INTO items(name,owner,location,type,date) VALUES(?,?,?,?,?)",[name,owner,location,type,date])
 end
+add_to_list(db,"Birth Certificate","Jorge","Locked Drawer","Document",210517)
+
 =begin
 class Items
   attr_accessor :name, :location, :date
