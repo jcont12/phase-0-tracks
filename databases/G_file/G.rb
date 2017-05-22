@@ -30,11 +30,49 @@ def show_list(db)
     puts i
   end
 end
-#def search_item(db,item)
-#  p db.execute("SELECT * FROM items WHERE name=item")
-#end
+
+def search_item(db,item)
+  list = db.execute("SELECT * FROM items WHERE name=?",item)
+  list.each do |i|
+    puts i
+  end
+end
+
+def delete_item(db,item)
+  db.execute("DELETE FROM items WHERE name=?",item)
+end
+
 
 #----DRIVER CODE----#
+puts 'Welcome to your important items inventory List'
+puts '..........'
+puts 'What would you like to do? (type:add/delete/search/list/exit)'
+input = gets.chomp.downcase
+if input == 'add'
+  puts 'Write the name of the item you would like to add'
+  name = gets.chomp
+  puts 'Who is the oowner of the item?'
+  owner = gets.chomp
+  puts 'Where will it be stored?'
+  location = gets.chomp
+  puts 'What is the item type (document/item)'
+  type = gets.chomp
+  puts 'What is the current date?'
+  date = gets.chomp
+  add_to_list(db,name,owner,location,type,date)
+elsif input == 'delete'
+  puts 'What item would you like to delete?'
+  item = gets.chomp
+  delete_item(db,item)
+elsif input == 'search'
+  puts 'What item would you like to search?'
+  item = gets.chomp
+  search_item(db,item)
+elsif input == 'list'
+  show_list(db)
+else
+end
+
 #add_to_list(db,"Birth Certificate","Jorge","Locked Drawer","Document",210517)
 #add_to_list(db,"Car Invoice","Jorge","Locked Drawer","Document",180317)
 #add_to_list(db,"Car Keys","Jorge","Top Drawer","Item",200517)
@@ -43,4 +81,6 @@ end
 #add_to_list(db,"Wedding ring","Fer","Closet Drawer","Item",180517)
 #add_to_list(db,"Hard Drive","Jorge","Studio Cabinet","Item",210517)
 #search_item(db,"Birth Certificate")
-show_list(db)
+#search_item(db,"Car Keys")
+#show_list(db)
+#delete_item(db,"Car Invoice")
