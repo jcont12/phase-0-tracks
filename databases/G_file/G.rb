@@ -46,31 +46,43 @@ end
 #----DRIVER CODE----#
 puts 'Welcome to your important items inventory List'
 puts '..........'
-puts 'What would you like to do? (type:add/delete/search/list/exit)'
-input = gets.chomp.downcase
-if input == 'add'
-  puts 'Write the name of the item you would like to add'
-  name = gets.chomp
-  puts 'Who is the oowner of the item?'
-  owner = gets.chomp
-  puts 'Where will it be stored?'
-  location = gets.chomp
-  puts 'What is the item type (document/item)'
-  type = gets.chomp
-  puts 'What is the current date?'
-  date = gets.chomp
-  add_to_list(db,name,owner,location,type,date)
-elsif input == 'delete'
-  puts 'What item would you like to delete?'
-  item = gets.chomp
-  delete_item(db,item)
-elsif input == 'search'
-  puts 'What item would you like to search?'
-  item = gets.chomp
-  search_item(db,item)
-elsif input == 'list'
-  show_list(db)
-else
+
+condition = false
+until condition
+  puts 'What would you like to do? (type:add/delete/search/list/exit)'
+  input = gets.chomp.downcase
+  if input == 'add'
+    puts 'Write the name of the item you would like to add'
+    name = gets.chomp
+    puts 'Who is the owner of the item?'
+    owner = gets.chomp
+    puts 'Where will it be stored?'
+    location = gets.chomp
+    puts 'What is the item type (document/item)'
+    type = gets.chomp
+    puts 'What is the current date?'
+    date = gets.chomp
+    add_to_list(db,name,owner,location,type,date)
+    condition = true
+  elsif input == 'delete'
+    puts 'What item would you like to delete?'
+    item = gets.chomp
+    delete_item(db,item)
+    condition = true
+  elsif input == 'search'
+    puts 'What item would you like to search?'
+    item = gets.chomp
+    search_item(db,item)
+    condition = true
+  elsif input == 'list'
+    show_list(db)
+    condition = true
+  elsif input == 'exit'
+    puts 'goodbye!'
+    condition = true
+  else
+    puts 'Please type one of the available options'
+  end
 end
 
 #add_to_list(db,"Birth Certificate","Jorge","Locked Drawer","Document",210517)
