@@ -1,19 +1,10 @@
-#Create an organizer file for documents and items that you physically store
-  #Items to store will have name,type,location
-#Welcome myself, let me know what program I am using
-#Ask me what do I want to do..? Store a new document, update a current item or delete an item
-  #conditional statements:
-    #if Add is typed, run a add method
-    #if update is typed, ask what will be updated, run a search and find it so it can be updated
-    #if delete is run, type what you want to delete and search for it and delete
-#Once finished doing what I need to do, ask if there is anything else I want to do or end
-#If type end, leave program
-
 #require gems
 require 'sqlite3'
 
+#Create database to store variables
 db = SQLite3::Database.new("items.db")
 
+#Create table in database command
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS items(
   id INTEGER PRIMAY KEY,
@@ -25,26 +16,31 @@ create_table_cmd = <<-SQL
   )
 SQL
 
+#Run the create table database command
 db.execute(create_table_cmd)
 
-
+#Method for adding items
 def add_to_list(db,name,owner,location,type,date)
   db.execute("INSERT INTO items(name,owner,location,type,date) VALUES(?,?,?,?,?)",[name,owner,location,type,date])
 end
-add_to_list(db,"Birth Certificate","Jorge","Locked Drawer","Document",210517)
 
-=begin
-class Items
-  attr_accessor :name, :location, :date
-  def initialize(name)
-    @name = name
-    @owner = nil
-    @location = nil
-    @type = nil
-    @date =  nil
+def show_list(db)
+  list = db.execute("SELECT * FROM items")
+  list.each do |i|
+    puts i
   end
 end
+#def search_item(db,item)
+#  p db.execute("SELECT * FROM items WHERE name=item")
+#end
 
-ring = Items.new('Wedding ring')
-p ring.name
-=end
+#----DRIVER CODE----#
+#add_to_list(db,"Birth Certificate","Jorge","Locked Drawer","Document",210517)
+#add_to_list(db,"Car Invoice","Jorge","Locked Drawer","Document",180317)
+#add_to_list(db,"Car Keys","Jorge","Top Drawer","Item",200517)
+#add_to_list(db,"Passport","Jorge","Studio Cabinet","Document",210517)
+#add_to_list(db,"Passport","Fer","Studio Cabinet","Document",210517)
+#add_to_list(db,"Wedding ring","Fer","Closet Drawer","Item",180517)
+#add_to_list(db,"Hard Drive","Jorge","Studio Cabinet","Item",210517)
+#search_item(db,"Birth Certificate")
+show_list(db)
